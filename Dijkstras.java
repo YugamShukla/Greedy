@@ -6,8 +6,10 @@ public class Dijkstras {
         boolean[] visitedVertex = new boolean[count];
         int[] distance = new int[count];
         for (int i = 0; i < count; i++) {
-            visitedVertex[i] = false;
+            visitedVertex[i] = false;//initially no vertex is visited
             distance[i] = Integer.MAX_VALUE;
+            //initially distance between each vertex is infinity 
+            //they are not joined yet
         }
 
         // Distance of self loop is zero
@@ -31,9 +33,9 @@ public class Dijkstras {
 
     }
 
-    // Finding the minimum distance
+    // minimum distance function
     private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
-        int minDistance = Integer.MAX_VALUE;
+        int minDistance = Integer.MAX_VALUE;//initially distance is infinity
         int minDistanceVertex = -1;
         for (int i = 0; i < distance.length; i++) {
             if (!visitedVertex[i] && distance[i] < minDistance) {
